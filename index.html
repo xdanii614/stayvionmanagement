@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stayvion Management – Airbnb & Short-Term Rental Management</title>
+  <meta name="description" content="Stayvion Management übernimmt Vermarktung, Gästekommunikation, Reinigung & Optimierung deiner Kurzzeitvermietung. Mehr Auslastung. Weniger Aufwand." />
+  <meta name="theme-color" content="#071a3a" />
+  <meta property="og:title" content="Stayvion Management" />
+  <meta property="og:description" content="Professionelles Short-Term Rental Management: Listing, Pricing, Gäste, Reinigung, Instandhaltung." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo-transparent.png" />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" href="logo-transparent.png" />
+  <style>
+:root{
+  --bg:#071a3a; --bg2:#040d1f; --text:#eaf0ff; --muted:#b9c7ee; --teal:#22d3ee; --cyan:#34d399;
+  --line:rgba(255,255,255,.12); --shadow:0 18px 60px rgba(0,0,0,.35); --radius:18px; --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--text);
+  background:
+    radial-gradient(900px 600px at 10% 10%, rgba(34,211,238,.18), transparent 60%),
+    radial-gradient(800px 500px at 80% 30%, rgba(52,211,153,.14), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg2) 65%, #030915);
+  line-height:1.45;
+}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:0 18px}
+.topbar{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter: blur(12px);
+  background: rgba(7,26,58,.55);
+  border-bottom: 1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;min-width:260px}
+.brand img{
+  width:64px;height:64px;border-radius:14px;object-fit:contain;
+  border:1px solid rgba(255,255,255,.10);
+  background: transparent;
+  box-shadow: 0 12px 34px rgba(0,0,0,.25);
+}
+.brand b{letter-spacing:.2px}
+.brand small{display:block;color:var(--muted);margin-top:2px;font-weight:600}
+.links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.links a{color:var(--muted);font-weight:700;padding:10px 10px;border-radius:12px;transition:all .18s ease}
+.links a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 14px;border-radius:14px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.05);
+  color: var(--text); font-weight:900;
+  white-space:nowrap;
+  transition: all .18s ease;
+}
+.btn:hover{background:rgba(255,255,255,.07)}
+.cta{
+  border:1px solid rgba(34,211,238,.55);
+  background: linear-gradient(180deg, rgba(34,211,238,.22), rgba(52,211,153,.10));
+  box-shadow: 0 10px 30px rgba(34,211,238,.12);
+}
+.cta:hover{transform: translateY(-1px)}
+.card{
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.hero{padding:56px 0 24px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:stretch}
+.hero h1{font-size:clamp(30px,4.2vw,54px);line-height:1.05;margin:0 0 14px;letter-spacing:-.6px}
+.accent{
+  background: linear-gradient(90deg, var(--teal), var(--cyan));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lead{color:var(--muted);font-size:clamp(15px,1.4vw,18px);max-width:64ch;margin:0 0 18px}
+.pill-row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 22px}
+.pill{border:1px solid var(--line);background:rgba(255,255,255,.05);padding:8px 10px;border-radius:999px;color:var(--muted);font-weight:800;font-size:13px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.note{margin-top:14px;color:rgba(255,255,255,.78);font-size:13px}
+.hero-card{padding:18px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{padding:14px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(11,37,82,.45)}
+.stat b{display:block;font-size:22px;letter-spacing:-.4px}
+.stat span{display:block;color:var(--muted);font-weight:750;margin-top:4px;font-size:13px}
+.mini{margin-top:12px;padding:14px;border-radius:16px;border:1px dashed rgba(34,211,238,.35);background:rgba(34,211,238,.08);color:rgba(255,255,255,.86);font-weight:750;font-size:13px}
+section{padding:44px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+h2{margin:0;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.4px}
+.sub{margin:6px 0 0;color:var(--muted);max-width:70ch}
+.grid3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+.feature{padding:18px}
+.feature h3{margin:0 0 8px;font-size:18px}
+.feature p{margin:0;color:var(--muted)}
+.tag{display:inline-flex;align-items:center;gap:8px;margin-top:14px;color:rgba(255,255,255,.86);font-weight:900;font-size:12px;letter-spacing:.2px}
+.dot{width:10px;height:10px;border-radius:999px;background:var(--teal);box-shadow:0 0 0 4px rgba(34,211,238,.14)}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.step{padding:18px}
+.step b{display:inline-block;background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.35);color:var(--text);padding:6px 10px;border-radius:999px;margin-bottom:10px;font-weight:900}
+.step h3{margin:0 0 8px}
+.step p{margin:0;color:var(--muted)}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.plan{padding:18px;position:relative;overflow:hidden}
+.plan .badge{position:absolute;top:14px;right:14px;background:rgba(34,211,238,.16);border:1px solid rgba(34,211,238,.35);color:rgba(255,255,255,.92);font-weight:950;font-size:12px;padding:6px 10px;border-radius:999px}
+.plan h3{margin:0 0 8px}
+.price{font-size:30px;font-weight:950;letter-spacing:-.6px;margin:6px 0 8px}
+.plan p{margin:0 0 12px;color:var(--muted)}
+.ul{margin:0;padding-left:18px;color:rgba(255,255,255,.88)}
+.ul li{margin:8px 0}
+.plan .btnrow{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+details{border:1px solid var(--line);background:rgba(255,255,255,.05);border-radius:16px;padding:14px 16px}
+summary{cursor:pointer;font-weight:950;color:rgba(255,255,255,.95);list-style:none}
+summary::-webkit-details-marker{display:none}
+details p{margin:10px 0 0;color:var(--muted)}
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;align-items:stretch}
+form{display:grid;gap:10px}
+label{font-weight:900;font-size:13px;color:rgba(255,255,255,.9)}
+input, textarea{
+  width:100%;padding:12px 12px;border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(3,9,21,.45);
+  color: var(--text); outline:none;
+}
+textarea{min-height:120px;resize:vertical}
+input:focus, textarea:focus{border-color: rgba(34,211,238,.55)}
+.hint{color:var(--muted);font-size:13px;margin:0}
+.contact-card{padding:18px}
+.contact-card h3{margin:0 0 8px}
+.contact-card p{margin:0 0 10px;color:var(--muted)}
+.contact-list{margin:0;padding-left:18px;color:rgba(255,255,255,.88)}
+.contact-list li{margin:7px 0}
+.legal{padding:22px}
+.legal h1{margin:0 0 10px;font-size:32px}
+.legal h2{margin-top:18px}
+.legal p,.legal li{color:rgba(255,255,255,.86)}
+.legal a{color:var(--teal);font-weight:900}
+footer{padding:26px 0 34px;border-top:1px solid var(--line);background: rgba(0,0,0,.15)}
+.footer-row{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.fine{color:rgba(255,255,255,.65);font-size:12px;max-width:90ch}
+@media (max-width:980px){
+  .hero-grid,.grid3,.steps,.pricing,.faq-grid,.contact{grid-template-columns:1fr}
+  .links{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html#home" aria-label="Stayvion Management Startseite">
+        <img src="logo-transparent.png" alt="Stayvion Management Logo" />
+        <div>
+          <b>Stayvion Management</b>
+          <small>Airbnb & Short-Term Rental Management</small>
+        </div>
+      </a>
+      <nav class="links" aria-label="Hauptnavigation">
+        <a href="index.html#services">Leistungen</a>
+        <a href="index.html#process">Ablauf</a>
+        <a href="index.html#pricing">Pakete</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Kontakt</a>
+      </nav>
+      <a class="btn cta" href="index.html#contact">Kostenlose Beratung</a>
+    </div>
+  </div>
+</div>
+
+<main id="home" class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1>Mehr Buchungen. Weniger Stress. <span class="accent">Stayvion Management übernimmt deine Kurzzeitvermietung</span></h1>
+        <p class="lead">
+          Wir übernehmen den kompletten Betrieb: Listing & Vermarktung, dynamisches Pricing, Gästeservice,
+          Reinigung, Instandhaltung und laufende Optimierung – transparent, zuverlässig und mit Fokus auf 5-Sterne-Bewertungen.
+        </p>
+        <div class="pill-row">
+          <div class="pill">✅ 24/7 Gästeservice</div>
+          <div class="pill">📈 Dynamic Pricing</div>
+          <div class="pill">🧼 Reinigung & Qualitätscheck</div>
+          <div class="pill">🔑 Check-in / Check-out Prozesse</div>
+          <div class="pill">📊 Monatsreporting</div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn cta" href="#contact">Erstgespräch anfragen</a>
+          <a class="btn" href="#services">Leistungen ansehen</a>
+        </div>
+        </div>
+      <aside class="card hero-card">
+        <div class="stat-grid">
+          <div class="stat"><b>Strukturiert</b><span>Standards & Checklisten</span></div>
+          <div class="stat"><b>Transparent</b><span>Klare Reports & KPIs</span></div>
+          <div class="stat"><b>Gäste-Fokus</b><span>5-Sterne Prozesse</span></div>
+          <div class="stat"><b>Skalierbar</b><span>Von 1 bis Multi-Unit</span></div>
+        </div>
+        <div class="mini"><b>Quick Check:</b> Im Erstgespräch zeigen wir dir die nächsten Schritte und wie Stayvion Management den Betrieb übernimmt.</div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<section id="services"><div class="container">
+  <div class="section-head"><div><h2>Leistungen</h2><p class="sub">Alles, was eine Kurzzeitvermietung zuverlässig laufen lässt – aus einer Hand.</p></div>
+  <a class="btn" href="#pricing">Pakete vergleichen</a></div>
+
+  <div class="grid3">
+    <div class="card feature"><h3>Listing & Vermarktung</h3><p>Professionelle Inserate, starke Texte, Foto-Briefing, Optimierung von Titel, USPs und Conversion.</p><div class="tag"><span class="dot"></span>Mehr Sichtbarkeit</div></div>
+    <div class="card feature"><h3>Dynamic Pricing</h3><p>Preisstrategie nach Saison, Events und Nachfrage. Mindestnächte & Last-Minute-Optimierung.</p><div class="tag"><span class="dot"></span>Mehr Umsatz</div></div>
+    <div class="card feature"><h3>24/7 Gästeservice</h3><p>Schnelle Antworten, Check-in Infos, Problemlösung, Hausregeln und klare Eskalation.</p><div class="tag"><span class="dot"></span>Bessere Bewertungen</div></div>
+    <div class="card feature"><h3>Reinigung & Wäsche</h3><p>Reinigungsplanung, Qualitätscheck, Wäschelogistik und Verbrauchsmaterialien.</p><div class="tag"><span class="dot"></span>Konstante Qualität</div></div>
+    <div class="card feature"><h3>Operations & Instandhaltung</h3><p>Schlüsselmanagement, Schäden & Reparaturen, Handwerker-Koordination, Inventar & Standards.</p><div class="tag"><span class="dot"></span>Weniger Aufwand</div></div>
+    <div class="card feature"><h3>Reporting</h3><p>Monatsübersicht: Auslastung, Umsatz, Kosten, To-Dos. Transparent statt „Black Box“.</p><div class="tag"><span class="dot"></span>Planbar</div></div>
+  </div>
+</div></section>
+
+
+
+<section id="warum-stayvion"><div class="container">
+  <div class="section-head">
+    <div>
+      <h2>Warum Stayvion?</h2>
+      <p class="sub">
+        Stayvion Management steht für transparente, strukturierte und zuverlässige Betreuung von Kurzzeitvermietungen.
+        Unser Fokus: Eigentümer entlasten und gleichzeitig das Umsatzpotenzial der Immobilie konsequent ausschöpfen.
+      </p>
+    </div>
+    <a class="btn" href="mailto:contact@stayvionmanagement.com">Kostenlose Erstberatung</a>
+  </div>
+
+  <div class="grid3">
+    <div class="card feature">
+      <h3>Full-Service-Ansatz</h3>
+      <p>Von Listing über Preisoptimierung bis Gästekommunikation – alles aus einer Hand.</p>
+      <div class="tag"><span class="dot"></span>Weniger Aufwand</div>
+    </div>
+    <div class="card feature">
+      <h3>Transparente Abläufe</h3>
+      <p>Klare Prozesse, saubere Abstimmung und regelmäßige Einblicke in die Performance.</p>
+      <div class="tag"><span class="dot"></span>Volle Kontrolle</div>
+    </div>
+    <div class="card feature">
+      <h3>Qualitätsstandards</h3>
+      <p>Feste Reinigungs- & Kontrollabläufe, damit Gäste konstant Top-Erlebnisse haben.</p>
+      <div class="tag"><span class="dot"></span>Bessere Bewertungen</div>
+    </div>
+  </div>
+
+  <div class="grid3" style="margin-top:14px">
+    <div class="card feature">
+      <h3>Persönlicher Kontakt</h3>
+      <p>Kein Callcenter – direkte Betreuung und schnelle Entscheidungen.</p>
+      <div class="tag"><span class="dot"></span>Direkt & zuverlässig</div>
+    </div>
+    <div class="card feature">
+      <h3>Performance-Fokus</h3>
+      <p>Datenbasierte Optimierung (Preise, Regeln, Verfügbarkeit) für stabile Auslastung.</p>
+      <div class="tag"><span class="dot"></span>Mehr Umsatz</div>
+    </div>
+    <div class="card feature">
+      <h3>Ruhiger Betrieb</h3>
+      <p>Wir managen den Alltag – du erhältst Ergebnisse, ohne Stress.</p>
+      <div class="tag"><span class="dot"></span>Stressfrei</div>
+    </div>
+  </div>
+</div></section>
+
+
+
+<section id="fuer-wen"><div class="container">
+  <div class="section-head">
+    <div>
+      <h2>Für wen ist Stayvion geeignet?</h2>
+      <p class="sub">Ideal für Eigentümer, die professionell vermieten möchten – ohne operativen Aufwand.</p>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <div class="card feature">
+      <h3>Eigentümer mit wenig Zeit</h3>
+      <p>Du willst vermieten, ohne dich um den Alltag kümmern zu müssen.</p>
+      <div class="tag"><span class="dot"></span>Entlastung</div>
+    </div>
+    <div class="card feature">
+      <h3>Investoren</h3>
+      <p>Fokus auf Rendite, Skalierbarkeit und saubere Prozesse.</p>
+      <div class="tag"><span class="dot"></span>Rendite</div>
+    </div>
+    <div class="card feature">
+      <h3>Erstvermieter</h3>
+      <p>Du startest neu in die Kurzzeitvermietung und willst Fehler vermeiden.</p>
+      <div class="tag"><span class="dot"></span>Sicherer Start</div>
+    </div>
+  </div>
+
+  <div class="grid3" style="margin-top:14px">
+    <div class="card feature">
+      <h3>Bestandsvermieter</h3>
+      <p>Du hast bereits Buchungen, willst aber bessere Auslastung & weniger Stress.</p>
+      <div class="tag"><span class="dot"></span>Optimierung</div>
+    </div>
+    <div class="card feature">
+      <h3>Remote-Eigentümer</h3>
+      <p>Du wohnst nicht vor Ort – wir koordinieren alles zuverlässig.</p>
+      <div class="tag"><span class="dot"></span>Vor-Ort-Handling</div>
+    </div>
+    <div class="card feature">
+      <h3>Premium-Anspruch</h3>
+      <p>Du legst Wert auf Qualität, Ordnung und starke Gästebewertungen.</p>
+      <div class="tag"><span class="dot"></span>Qualität</div>
+    </div>
+  </div>
+</div></section>
+
+
+<section id="process"><div class="container">
+  <div class="section-head"><div>
+    <h2>So funktioniert’s</h2>
+    <p class="sub">Ein klarer Prozess – damit du planbar, stressfrei und profitabel vermietest.</p>
+  </div></div>
+
+  <div class="steps">
+    <div class="card step"><b>Schritt 1</b><h3>Analyse &amp; Setup</h3><p>Wir prüfen deine Immobilie, das Marktumfeld und richten alle Systeme professionell ein.</p></div>
+    <div class="card step"><b>Schritt 2</b><h3>Listing &amp; Preisstrategie</h3><p>Optimierte Inserate, dynamisches Pricing und klare Buchungsregeln.</p></div>
+    <div class="card step"><b>Schritt 3</b><h3>Operativer Betrieb</h3><p>Gästeservice, Check-in/Check-out, Reinigung und Koordination laufen zuverlässig.</p></div>
+    <div class="card step"><b>Schritt 4</b><h3>Reporting &amp; Optimierung</h3><p>Regelmäßige Auswertungen und kontinuierliche Optimierung für bessere Ergebnisse.</p></div>
+  </div>
+</div></section>
+
+
+<section id="pricing"><div class="container">
+  <div class="section-head"><div><h2>Pakete</h2><p class="sub">Beispiel-Struktur. Preise/Prozente kannst du jederzeit anpassen.</p></div><a class="btn" href="#contact">Angebot anfragen</a></div>
+  <div class="pricing">
+    <div class="card plan"><h3>Starter</h3><div class="price">ab 10–15% <span style="font-size:14px;color:var(--muted);font-weight:800">vom Umsatz</span></div><p>Ideal, wenn du die Basics professionell abgeben willst.</p>
+      <ul class="ul"><li>Gästekommunikation (Standardzeiten)</li><li>Kalender & Buchungsmanagement</li><li>Grundlegendes Pricing</li><li>Reinigungskoordination</li></ul>
+      <div class="btnrow"><a class="btn cta" href="#contact">Starter anfragen</a><a class="btn" href="#faq">Fragen?</a></div>
+    </div>
+    <div class="card plan"><div class="badge">Beliebt</div><h3>Growth</h3><div class="price">ab 15–20% <span style="font-size:14px;color:var(--muted);font-weight:800">vom Umsatz</span></div><p>Für Hosts, die Auslastung & Bewertungen maximieren wollen.</p>
+      <ul class="ul"><li>24/7 Gästeservice</li><li>Dynamic Pricing + Strategien</li><li>Listing-Optimierung (laufend)</li><li>Qualitätschecks & Standards</li><li>Monatliches Reporting</li></ul>
+      <div class="btnrow"><a class="btn cta" href="#contact">Growth anfragen</a><a class="btn" href="#services">Leistungen</a></div>
+    </div>
+    <div class="card plan"><h3>Premium</h3><div class="price">individuell</div><p>Für mehrere Einheiten / Full-Service / Skalierung.</p>
+      <ul class="ul"><li>Multi-Unit Prozesse & Teamkoordination</li><li>Inventar, Wartung, Handwerker-Netzwerk</li><li>Erweiterte KPI-Analysen</li><li>Onboarding neuer Einheiten</li><li>Priorisierter Support</li></ul>
+      <div class="btnrow"><a class="btn cta" href="#contact">Premium anfragen</a><a class="btn" href="#process">Ablauf</a></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="container">
+  <div class="section-head"><div><h2>FAQ</h2><p class="sub">Die häufigsten Fragen – kurz und klar.</p></div></div>
+  <div class="faq-grid">
+    <div>
+      <details open><summary>Was genau übernimmt Stayvion Management?</summary><p>Je nach Paket übernehmen wir den kompletten Betrieb deiner Kurzzeitvermietung: Setup &amp; Optimierung des Listings, dynamische Preissteuerung, 24/7 Gästekommunikation, Check‑in/Check‑out‑Prozesse, Reinigungskoordination, Instandhaltungs-/Handwerkerabstimmung sowie regelmäßiges Reporting zu Auslastung &amp; Umsatz.</p></details>
+      <details><summary>Kann ich weiterhin selbst blockieren/steuern?</summary><p>Ja. Du behältst jederzeit den Zugang zur Plattform (z. B. Airbnb/Booking) und kannst Zeiträume selbst sperren. Auf Wunsch arbeiten wir mit klaren Freigaberegeln (z. B. Mindestnächte, Buchungsfenster, Preisgrenzen), damit alles zu deinem Stil passt.</p></details>
+      <details><summary>Wie läuft die Reinigung ab?</summary><p>Wir arbeiten mit festen Reinigungsabläufen und Checklisten. Nach jedem Aufenthalt wird gereinigt, Bettwäsche/Handtücher werden organisiert (je nach Setup) und ein Qualitätscheck stellt sicher, dass das Objekt bereit für den nächsten Gast ist. Schäden oder Auffälligkeiten melden wir direkt und koordinieren die Lösung.</p></details>
+    </div>
+    <div>
+      <details><summary>Welche Regionen betreut ihr?</summary><p>Wir betreuen Objekte in Deutschland dort, wo wir verlässliche Service‑ und Reinigungspartner abbilden können. Sende uns einfach den Standort (Stadt/Region) – wir geben dir kurzfristig eine klare Rückmeldung, ob wir die Betreuung übernehmen können.</p></details>
+      <details><summary>Gibt es eine Mindestlaufzeit?</summary><p>Keine starre Mindestlaufzeit. Viele Eigentümer starten mit einer Testphase von 3 Monaten, um Prozesse und Performance sauber einzuspielen. Danach kann die Zusammenarbeit flexibel weiterlaufen – Kündigungsfristen stimmen wir transparent im Vertrag ab.</p></details>
+      <details><summary>Ist Kurzzeitvermietung überall erlaubt?</summary><p>Das hängt von Stadt, Eigentümergemeinschaft und ggf. Zweckentfremdungs‑/Meldepflichten ab. Wir geben dir eine praktische Checkliste und Hinweise aus der Praxis, ersetzen aber keine Rechtsberatung. Bitte prüfe die lokalen Vorgaben (oder mit einem Fachanwalt/der Stadt).</p></details>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="container">
+  <div class="section-head"><div><h2>Kontakt</h2><p class="sub">Schreib uns kurz – wir melden uns schnell zurück.</p></div></div>
+  <div class="contact">
+    <div class="card contact-card">
+      <h3>Unverbindliche Anfrage</h3>
+      
+      <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="danke.html">
+        <input type="hidden" name="form-name" value="kontakt" />
+        <p style="display:none"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+        <div><label for="name">Name</label><input id="name" name="name" placeholder="Dein Name" required /></div>
+        <div><label for="email">E-Mail</label><input id="email" name="email" type="email" placeholder="deine@email.de" required /></div>
+        <div><label for="city">Stadt/Region</label><input id="city" name="city" placeholder="z. B. Berlin" /></div>
+        <div><label for="message">Nachricht</label><textarea id="message" name="message" placeholder="Objekt, Status, Ziel…"></textarea></div>
+        <button class="btn cta" type="submit">Anfrage senden</button>
+        <p class="hint">E-Mail: <b>contact@stayvionmanagement.com</b> · Tel: <b>0159 04831063</b></p>
+      </form>
+    </div>
+    <div class="card contact-card">
+      <h3>Fürs Erstgespräch</h3>
+      <p>Damit wir dir schnell eine Einschätzung geben können:</p>
+      <ul class="contact-list">
+        <li>Standort + Art des Objekts</li><li>Status (live / geplant)</li><li>Fotos / Ausstattung</li><li>Ziel (Umsatz, weniger Aufwand, Skalierung)</li><li>Check-in Option / Schlüssel</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="brand" style="min-width:auto">
+        <img src="logo-transparent.png" alt="Stayvion Management Logo" />
+        <div>
+          <b>Stayvion Management</b>
+          <small>Airbnb & Short-Term Rental Management</small>
+        </div>
+      </div>
+      <div class="fine">
+        © <span id="year"></span> Stayvion Management ·
+        <a href="index.html#home">Start</a> ·
+        <a href="index.html#contact">Kontakt</a> ·
+        <a href="impressum.html">Impressum</a> ·
+        <a href="datenschutz.html">Datenschutz</a><br/>
+</div>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+</body></html>
