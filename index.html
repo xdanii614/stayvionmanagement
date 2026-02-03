@@ -386,6 +386,9 @@ footer{padding:26px 0 34px;border-top:1px solid var(--line);background: rgba(0,0
         <button class="btn cta" type="submit">Anfrage senden</button>
         <p class="hint">E-Mail: <b>contact@stayvionmanagement.com</b> · Tel: <b>0159 04831063</b></p>
       </form>
+      <div id="success-message" style="display:none; margin-top:16px;">
+  <h3>Danke für deine Anfrage!</h3>
+  <p>Wir melden uns schnellstmöglich bei dir.</p>
     </div>
     <div class="card contact-card">
       <h3>Fürs Erstgespräch</h3>
@@ -418,38 +421,39 @@ footer{padding:26px 0 34px;border-top:1px solid var(--line);background: rgba(0,0
     </div>
   </div>
 </footer>
-<div id="success-message" style="display:none">
-  <h3>Danke für deine Anfrage!</h3>
-  <p>Wir melden uns schnellstmöglich bei dir.</p>
-</div>
+
 
 <script>
 const form = document.getElementById("kontakt-form");
 const successMessage = document.getElementById("success-message");
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const formData = new FormData(form);
-  const data = new URLSearchParams(formData);
+  const data = new URLSearchParams();
+  data.append("form-name", "kontakt");
+  formData.forEach((value, key) => data.append(key, value));
 
-  fetch("/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: data.toString()
-  })
-  .then(() => {
+  try {
+    const res = await fetch("/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: data.toString()
+    });
+
+    if (!res.ok) throw new Error(res.status);
+
     form.style.display = "none";
     successMessage.style.display = "block";
-  })
-  .catch(error => alert("Fehler: " + error));
+
+  } catch (err) {
+    alert("Senden fehlgeschlagen");
+  }
 });
 </script>
-
-
-
 
 </body>
 </html>
