@@ -376,7 +376,7 @@ footer{padding:26px 0 34px;border-top:1px solid var(--line);background: rgba(0,0
     <div class="card contact-card">
       <h3>Unverbindliche Anfrage</h3>
       
-      <form name="kontakt" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="bot-field">
+      <form id="kontakt-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="kontakt">
         <p style="display:none"><label>Don’t fill this out: <input name="bot-field" /></label></p>
         <div><label for="name">Name</label><input id="name" name="name" placeholder="Dein Name" required /></div>
@@ -418,6 +418,38 @@ footer{padding:26px 0 34px;border-top:1px solid var(--line);background: rgba(0,0
     </div>
   </div>
 </footer>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<div id="success-message" style="display:none">
+  <h3>Danke für deine Anfrage!</h3>
+  <p>Wir melden uns schnellstmöglich bei dir.</p>
+</div>
 
-</body></html>
+<script>
+const form = document.getElementById("kontakt-form");
+const successMessage = document.getElementById("success-message");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const data = new URLSearchParams(formData);
+
+  fetch("/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: data.toString()
+  })
+  .then(() => {
+    form.style.display = "none";
+    successMessage.style.display = "block";
+  })
+  .catch(error => alert("Fehler: " + error));
+});
+</script>
+
+
+
+
+</body>
+</html>
