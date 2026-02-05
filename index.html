@@ -436,8 +436,7 @@ footer{padding:26px 0 34px;border-top:1px solid var(--line);background: rgba(0,0
     try {
       await emailjs.sendForm(
         "service_yfpewjo",
-        "template_ept8d27",
-        form);
+        "main",form);
 
       form.style.display = "none";
       successMessage.style.display = "block";
