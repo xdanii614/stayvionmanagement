@@ -1,17 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Privacy Policy</title>
-</head>
-<body style="font-family:Arial; padding:40px; max-width:900px; margin:auto;">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Privacy Policy – Stayvion Management</title>
+<link rel="icon" href="logo-transparent.png" />
 
+<style>
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui;
+  background:#071a3a;
+  color:#eaf0ff;
+}
+.container{max-width:900px;margin:auto;padding:60px 20px;}
+h1{font-size:36px;margin-bottom:20px;}
+h2{margin-top:30px;}
+p{line-height:1.6;color:rgba(255,255,255,.85);}
+a{color:#22d3ee;text-decoration:none;font-weight:600;}
+.topbar{
+  padding:18px 20px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.brand{
+  font-weight:700;
+  font-size:18px;
+}
+footer{
+  margin-top:60px;
+  padding:30px 20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  text-align:center;
+  font-size:14px;
+  color:rgba(255,255,255,.6);
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <a href="en.html">Stayvion Management</a>
+  </div>
+</div>
+
+<div class="container">
 <h1>Privacy Policy</h1>
 
 <h2>1. Overview</h2>
 <p>
-The protection of your personal data is very important to us.
-This privacy policy explains what data we collect and how we use it.
+Protecting your personal data is important to us.
+This policy explains what data we collect and how we use it.
 </p>
 
 <h2>2. Controller</h2>
@@ -21,30 +61,36 @@ Stayvion Management<br>
 Bollweg 28b<br>
 21614 Buxtehude<br>
 Germany<br>
-Email: <a href="mailto:danielroschkow@stayvionmanagement.com">contact@stayvionmanagement.com</a>
+Email: danielroschkow@stayvionmanagement.com
 </p>
 
 <h2>3. Hosting</h2>
 <p>
-This website is hosted via GitHub Pages (GitHub Inc., USA) and/or Netlify.
-Server log files may be processed automatically by the hosting provider.
+This website is hosted via GitHub Pages and/or Netlify.
+The hosting provider may automatically process server log files.
 </p>
 
 <h2>4. Contact Form</h2>
 <p>
-If you contact us via the contact form or email, your details will be stored
-for the purpose of processing your request. The data will not be shared without your consent.
+If you contact us via form or email, your details will be stored
+to process your request. Data will not be shared without consent.
 </p>
 
-<h2>5. Your Rights</h2>
+<h2>5. Your Rights (GDPR)</h2>
 <p>
-Under the GDPR, you have the right to request access to your stored personal data,
-rectification, deletion, restriction of processing, and data portability.
-You also have the right to lodge a complaint with a supervisory authority.
+You have the right to access, rectify, delete, restrict processing,
+data portability and to lodge a complaint with a supervisory authority.
 </p>
 
-<br>
-<a href="en.html">← Back to Home</a>
+</div>
+
+<footer>
+© <span id="year"></span> Stayvion Management
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
