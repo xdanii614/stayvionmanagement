@@ -1,14 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Legal Notice</title>
-</head>
-<body style="font-family:Arial; padding:40px; max-width:900px; margin:auto;">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Legal Notice – Stayvion Management</title>
+<link rel="icon" href="logo-transparent.png" />
 
+<style>
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui;
+  background:#071a3a;
+  color:#eaf0ff;
+}
+.container{max-width:900px;margin:auto;padding:60px 20px;}
+h1{font-size:36px;margin-bottom:20px;}
+h2{margin-top:30px;}
+a{color:#22d3ee;text-decoration:none;font-weight:600;}
+.topbar{
+  padding:18px 20px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.brand{
+  font-weight:700;
+  font-size:18px;
+}
+footer{
+  margin-top:60px;
+  padding:30px 20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  text-align:center;
+  font-size:14px;
+  color:rgba(255,255,255,.6);
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <a href="en.html">Stayvion Management</a>
+  </div>
+</div>
+
+<div class="container">
 <h1>Legal Notice</h1>
 
-<p><strong>Information according to § 5 TMG (German Telemedia Act)</strong></p>
+<h2>Information according to § 5 TMG</h2>
 
 <p>
 Daniel Roschkow<br>
@@ -18,27 +57,35 @@ Bollweg 28b<br>
 Germany
 </p>
 
+<h2>Contact</h2>
 <p>
-<strong>Contact</strong><br>
-Email: <a href="mailto:danielroschkow@stayvionmanagement.com">contact@stayvionmanagement.com</a>
+Email: <a href="mailto:contact@stayvionmanagement.com">
+contact@stayvionmanagement.com
+</a>
 </p>
 
+<h2>VAT Information</h2>
 <p>
-<strong>VAT Information</strong><br>
-No VAT identification number is provided as the business operates under
-§ 19 UStG (German small business regulation).
+No VAT ID is provided as the business operates under § 19 UStG
+(German small business regulation).
 </p>
 
+<h2>Responsible for Content (§ 55 Abs. 2 RStV)</h2>
 <p>
-<strong>Responsible for content according to § 55 Abs. 2 RStV</strong><br>
 Daniel Roschkow<br>
 Bollweg 28b<br>
 21614 Buxtehude<br>
 Germany
 </p>
+</div>
 
-<br>
-<a href="en.html">← Back to Home</a>
+<footer>
+© <span id="year"></span> Stayvion Management
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
